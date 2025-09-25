@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "type": "call",
+    "title": "Initial Discovery Call",
+    "description": "Discussed current pain points and requirements for the enterprise software solution. John mentioned they're looking to modernize their legacy system.",
+    "contactId": 1,
+    "dealId": 1,
+    "date": "2024-02-15T10:30:00Z",
+    "createdAt": "2024-02-15T10:35:00Z"
+  },
+  {
+    "Id": 2,
+    "type": "email",
+    "title": "Proposal Follow-up",
+    "description": "Sent detailed proposal document with pricing breakdown and implementation timeline. Sarah requested additional technical specifications.",
+    "contactId": 2,
+    "dealId": 2,
+    "date": "2024-02-14T14:15:00Z",
+    "createdAt": "2024-02-14T14:20:00Z"
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "title": "Technical Requirements Review",
+    "description": "Met with Michael and his engineering team to review technical requirements for the data analytics platform. Discussed integration points and data sources.",
+    "contactId": 3,
+    "dealId": 3,
+    "date": "2024-02-13T15:00:00Z",
+    "createdAt": "2024-02-13T16:30:00Z"
+  },
+  {
+    "Id": 4,
+    "type": "call",
+    "title": "Contract Finalization",
+    "description": "Finalized contract terms and conditions with Emma. Deal is ready to close. She's excited about the mobile app development project.",
+    "contactId": 4,
+    "dealId": 4,
+    "date": "2024-02-12T11:45:00Z",
+    "createdAt": "2024-02-12T12:00:00Z"
+  },
+  {
+    "Id": 5,
+    "type": "note",
+    "title": "Lead Qualification Notes",
+    "description": "David expressed interest in CRM integration but mentioned budget constraints. Need to follow up with a scaled-down proposal.",
+    "contactId": 5,
+    "dealId": 5,
+    "date": "2024-02-11T09:20:00Z",
+    "createdAt": "2024-02-11T09:25:00Z"
+  },
+  {
+    "Id": 6,
+    "type": "email",
+    "title": "Security Assessment Proposal",
+    "description": "Sent comprehensive security audit proposal to Lisa. Highlighted compliance requirements and risk assessment methodology.",
+    "contactId": 6,
+    "dealId": 6,
+    "date": "2024-02-10T16:30:00Z",
+    "createdAt": "2024-02-10T16:35:00Z"
+  },
+  {
+    "Id": 7,
+    "type": "meeting",
+    "title": "Process Automation Demo",
+    "description": "Demonstrated process automation capabilities to Robert and his operations team. They were impressed with the workflow designer interface.",
+    "contactId": 7,
+    "dealId": 7,
+    "date": "2024-02-09T13:30:00Z",
+    "createdAt": "2024-02-09T14:45:00Z"
+  },
+  {
+    "Id": 8,
+    "type": "call",
+    "title": "Marketing Platform Discussion",
+    "description": "Jennifer explained their current marketing challenges and campaign management needs. Discussed integration with existing tools.",
+    "contactId": 8,
+    "dealId": 8,
+    "date": "2024-02-08T10:15:00Z",
+    "createdAt": "2024-02-08T10:30:00Z"
+  },
+  {
+    "Id": 9,
+    "type": "email",
+    "title": "DevOps Roadmap Proposal",
+    "description": "Sent detailed DevOps transformation roadmap to Christopher. Included CI/CD pipeline architecture and deployment strategy recommendations.",
+    "contactId": 9,
+    "dealId": 9,
+    "date": "2024-02-07T14:45:00Z",
+    "createdAt": "2024-02-07T15:00:00Z"
+  },
+  {
+    "Id": 10,
+    "type": "meeting",
+    "title": "E-commerce Requirements Workshop",
+    "description": "Conducted requirements workshop with Amanda's team. Defined product catalog structure, payment gateway requirements, and inventory management needs.",
+    "contactId": 10,
+    "dealId": 10,
+    "date": "2024-02-06T11:00:00Z",
+    "createdAt": "2024-02-06T13:15:00Z"
+  },
+  {
+    "Id": 11,
+    "type": "task",
+    "title": "Prepare Technical Documentation",
+    "description": "Create detailed technical documentation for the cloud migration project including architecture diagrams and migration timeline.",
+    "contactId": 2,
+    "dealId": 2,
+    "date": "2024-02-05T09:00:00Z",
+    "createdAt": "2024-02-05T09:05:00Z"
+  },
+  {
+    "Id": 12,
+    "type": "call",
+    "title": "Budget Discussion",
+    "description": "Discussed budget allocation with John for the enterprise software license. He confirmed the budget is approved for Q1 implementation.",
+    "contactId": 1,
+    "dealId": 1,
+    "date": "2024-02-04T16:20:00Z",
+    "createdAt": "2024-02-04T16:30:00Z"
+  }
+]
