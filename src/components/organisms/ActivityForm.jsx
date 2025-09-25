@@ -8,12 +8,12 @@ import { format } from "date-fns";
 
 const ActivityForm = ({ activity, contacts = [], deals = [], onSave, onCancel }) => {
   const [formData, setFormData] = useState({
-    type: "call",
-    title: "",
-    description: "",
-    contactId: "",
-    dealId: "",
-    date: ""
+type_c: "call",
+    title_c: "",
+    description_c: "",
+    contact_id_c: "",
+    deal_id_c: "",
+    date_c: ""
   });
   
   const [errors, setErrors] = useState({});
@@ -21,15 +21,15 @@ const ActivityForm = ({ activity, contacts = [], deals = [], onSave, onCancel })
   
   useEffect(() => {
     if (activity) {
-      setFormData({
+setFormData({
         ...activity,
-        date: format(new Date(activity.date), "yyyy-MM-dd'T'HH:mm")
+        date_c: format(new Date(activity.date_c), "yyyy-MM-dd'T'HH:mm")
       });
     } else {
       // Set default date to now
       setFormData(prev => ({
         ...prev,
-        date: format(new Date(), "yyyy-MM-dd'T'HH:mm")
+        date_c: format(new Date(), "yyyy-MM-dd'T'HH:mm")
       }));
     }
   }, [activity]);
@@ -37,16 +37,16 @@ const ActivityForm = ({ activity, contacts = [], deals = [], onSave, onCancel })
   const validateForm = () => {
     const newErrors = {};
     
-    if (!formData.title.trim()) {
-      newErrors.title = "Title is required";
+if (!formData.title_c.trim()) {
+      newErrors.title_c = "Title is required";
     }
     
-    if (!formData.contactId) {
-      newErrors.contactId = "Contact is required";
+if (!formData.contact_id_c) {
+      newErrors.contact_id_c = "Contact is required";
     }
     
-    if (!formData.date) {
-      newErrors.date = "Date is required";
+if (!formData.date_c) {
+      newErrors.date_c = "Date is required";
     }
     
     setErrors(newErrors);
@@ -85,10 +85,10 @@ const ActivityForm = ({ activity, contacts = [], deals = [], onSave, onCancel })
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Select
+<Select
           label="Activity Type"
-          name="type"
-          value={formData.type}
+          name="type_c"
+          value={formData.type_c}
           onChange={handleChange}
         >
           <option value="call">Phone Call</option>
@@ -98,51 +98,51 @@ const ActivityForm = ({ activity, contacts = [], deals = [], onSave, onCancel })
           <option value="task">Task</option>
         </Select>
         
-        <Input
+<Input
           label="Date & Time"
-          name="date"
+          name="date_c"
           type="datetime-local"
-          value={formData.date}
+          value={formData.date_c}
           onChange={handleChange}
-          error={errors.date}
+          error={errors.date_c}
         />
       </div>
       
-      <Input
+<Input
         label="Activity Title"
-        name="title"
-        value={formData.title}
+        name="title_c"
+        value={formData.title_c}
         onChange={handleChange}
-        error={errors.title}
+        error={errors.title_c}
         placeholder="Enter activity title"
       />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Select
+<Select
           label="Contact"
-          name="contactId"
-          value={formData.contactId}
+          name="contact_id_c"
+          value={formData.contact_id_c}
           onChange={handleChange}
-          error={errors.contactId}
+          error={errors.contact_id_c}
         >
           <option value="">Select a contact</option>
           {contacts.map(contact => (
             <option key={contact.Id} value={contact.Id}>
-              {contact.firstName} {contact.lastName} - {contact.company}
+              {contact.first_name_c} {contact.last_name_c} - {contact.company_c}
             </option>
           ))}
         </Select>
         
-        <Select
+<Select
           label="Related Deal (Optional)"
-          name="dealId"
-          value={formData.dealId}
+          name="deal_id_c"
+          value={formData.deal_id_c}
           onChange={handleChange}
         >
           <option value="">No related deal</option>
           {deals.map(deal => (
             <option key={deal.Id} value={deal.Id}>
-              {deal.title}
+              {deal.title_c}
             </option>
           ))}
         </Select>
@@ -151,10 +151,10 @@ const ActivityForm = ({ activity, contacts = [], deals = [], onSave, onCancel })
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Description
-        </label>
+</label>
         <textarea
-          name="description"
-          value={formData.description}
+          name="description_c"
+          value={formData.description_c}
           onChange={handleChange}
           rows={4}
           className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"

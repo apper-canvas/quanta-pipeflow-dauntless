@@ -7,13 +7,13 @@ import { toast } from "react-toastify";
 
 const ContactForm = ({ contact, onSave, onCancel }) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    position: "",
-    status: "prospect"
+first_name_c: "",
+    last_name_c: "",
+    email_c: "",
+    phone_c: "",
+    company_c: "",
+    position_c: "",
+    status_c: "prospect"
   });
   
   const [errors, setErrors] = useState({});
@@ -28,26 +28,26 @@ const ContactForm = ({ contact, onSave, onCancel }) => {
   const validateForm = () => {
     const newErrors = {};
     
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
+if (!formData.first_name_c.trim()) {
+      newErrors.first_name_c = "First name is required";
     }
     
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = "Last name is required";
+if (!formData.last_name_c.trim()) {
+      newErrors.last_name_c = "Last name is required";
     }
     
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
+if (!formData.email_c.trim()) {
+      newErrors.email_c = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email_c)) {
+      newErrors.email_c = "Email is invalid";
     }
     
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone is required";
+if (!formData.phone_c.trim()) {
+      newErrors.phone_c = "Phone is required";
     }
     
-    if (!formData.company.trim()) {
-      newErrors.company = "Company is required";
+if (!formData.company_c.trim()) {
+      newErrors.company_c = "Company is required";
     }
     
     setErrors(newErrors);
@@ -86,69 +86,69 @@ const ContactForm = ({ contact, onSave, onCancel }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
+<Input
           label="First Name"
-          name="firstName"
-          value={formData.firstName}
+          name="first_name_c"
+          value={formData.first_name_c}
           onChange={handleChange}
-          error={errors.firstName}
+          error={errors.first_name_c}
           placeholder="Enter first name"
         />
         
         <Input
-          label="Last Name"
-          name="lastName"
-          value={formData.lastName}
+label="Last Name"
+          name="last_name_c"
+          value={formData.last_name_c}
           onChange={handleChange}
-          error={errors.lastName}
+          error={errors.last_name_c}
           placeholder="Enter last name"
         />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
+<Input
           label="Email"
-          name="email"
+          name="email_c"
           type="email"
-          value={formData.email}
+          value={formData.email_c}
           onChange={handleChange}
-          error={errors.email}
+          error={errors.email_c}
           placeholder="Enter email address"
         />
         
-        <Input
+<Input
           label="Phone"
-          name="phone"
-          value={formData.phone}
+          name="phone_c"
+          value={formData.phone_c}
           onChange={handleChange}
-          error={errors.phone}
+          error={errors.phone_c}
           placeholder="Enter phone number"
         />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
+<Input
           label="Company"
-          name="company"
-          value={formData.company}
+          name="company_c"
+          value={formData.company_c}
           onChange={handleChange}
-          error={errors.company}
+          error={errors.company_c}
           placeholder="Enter company name"
         />
         
-        <Input
+<Input
           label="Position"
-          name="position"
-          value={formData.position}
+          name="position_c"
+          value={formData.position_c}
           onChange={handleChange}
           placeholder="Enter job position"
         />
       </div>
       
-      <Select
+<Select
         label="Status"
-        name="status"
-        value={formData.status}
+        name="status_c"
+        value={formData.status_c}
         onChange={handleChange}
       >
         <option value="prospect">Prospect</option>

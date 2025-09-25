@@ -44,13 +44,13 @@ const Dashboard = () => {
   
   const calculateMetrics = () => {
     const totalContacts = contacts.length;
-    const activeContacts = contacts.filter(c => c.status === "active").length;
+const activeContacts = contacts.filter(c => c.status_c === "active").length;
     const totalDeals = deals.length;
-    const totalValue = deals.reduce((sum, deal) => sum + deal.value, 0);
-    const closedDeals = deals.filter(d => d.stage === "closed").length;
+    const totalValue = deals.reduce((sum, deal) => sum + deal.value_c, 0);
+    const closedDeals = deals.filter(d => d.stage_c === "closed").length;
     const pipelineValue = deals
-      .filter(d => d.stage !== "closed")
-      .reduce((sum, deal) => sum + deal.value, 0);
+      .filter(d => d.stage_c !== "closed")
+      .reduce((sum, deal) => sum + deal.value_c, 0);
     
     return {
       totalContacts,
@@ -72,10 +72,10 @@ const Dashboard = () => {
   
   const getDealsByStage = () => {
     const stages = ["lead", "qualified", "proposal", "negotiation", "closed"];
-    return stages.map(stage => ({
+return stages.map(stage => ({
       stage,
-      count: deals.filter(d => d.stage === stage).length,
-      value: deals.filter(d => d.stage === stage).reduce((sum, deal) => sum + deal.value, 0)
+      count: deals.filter(d => d.stage_c === stage).length,
+      value: deals.filter(d => d.stage_c === stage).reduce((sum, deal) => sum + deal.value_c, 0)
     }));
   };
   

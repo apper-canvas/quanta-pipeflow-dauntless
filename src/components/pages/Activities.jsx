@@ -59,15 +59,15 @@ const Activities = () => {
     // Apply search filter
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
-      filtered = filtered.filter(activity => 
-        activity.title.toLowerCase().includes(searchLower) ||
-        activity.description.toLowerCase().includes(searchLower)
+filtered = filtered.filter(activity => 
+        activity.title_c.toLowerCase().includes(searchLower) ||
+        activity.description_c.toLowerCase().includes(searchLower)
       );
     }
     
     // Apply type filter
-    if (typeFilter) {
-      filtered = filtered.filter(activity => activity.type === typeFilter);
+if (typeFilter) {
+      filtered = filtered.filter(activity => activity.type_c === typeFilter);
     }
     
     setFilteredActivities(filtered);
@@ -116,20 +116,20 @@ const Activities = () => {
   };
   
   const getContactName = (contactId) => {
-    const contact = contacts.find(c => c.Id === contactId);
-    return contact ? `${contact.firstName} ${contact.lastName}` : "Unknown Contact";
+const contact = contacts.find(c => c.Id === contactId);
+    return contact ? `${contact.first_name_c} ${contact.last_name_c}` : "Unknown Contact";
   };
   
   const getDealTitle = (dealId) => {
-    const deal = deals.find(d => d.Id === dealId);
-    return deal ? deal.title : null;
+const deal = deals.find(d => d.Id === dealId);
+    return deal ? deal.title_c : null;
   };
   
   // Enhance activities with contact and deal information
   const enhancedActivities = filteredActivities.map(activity => ({
-    ...activity,
-    contactName: getContactName(activity.contactId),
-    dealTitle: activity.dealId ? getDealTitle(activity.dealId) : null
+...activity,
+    contactName: getContactName(activity.contact_id_c),
+    dealTitle: activity.deal_id_c ? getDealTitle(activity.deal_id_c) : null
   }));
   
   if (loading) return <Loading type="skeleton" />;

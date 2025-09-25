@@ -31,9 +31,9 @@ const ActivityItem = ({ activity, isLast = false }) => {
       <div className="flex-shrink-0 relative">
         <div className={cn(
           "w-8 h-8 rounded-full flex items-center justify-center",
-          getActivityColor(activity.type)
+getActivityColor(activity.type_c)
         )}>
-          <ApperIcon name={getActivityIcon(activity.type)} className="h-4 w-4" />
+          <ApperIcon name={getActivityIcon(activity.type_c)} className="h-4 w-4" />
         </div>
         {!isLast && (
           <div className="absolute top-8 left-1/2 transform -translate-x-px w-0.5 h-8 bg-gray-200"></div>
@@ -42,13 +42,13 @@ const ActivityItem = ({ activity, isLast = false }) => {
       
       <div className="flex-1 pb-8">
         <div className="flex items-center justify-between">
-          <h4 className="text-sm font-semibold text-gray-900">{activity.title}</h4>
+<h4 className="text-sm font-semibold text-gray-900">{activity.title_c}</h4>
           <span className="text-xs text-gray-500">
-            {format(new Date(activity.date), "MMM dd, HH:mm")}
+{format(new Date(activity.date_c), "MMM dd, HH:mm")}
           </span>
         </div>
-        {activity.description && (
-          <p className="text-sm text-gray-600 mt-1">{activity.description}</p>
+{activity.description_c && (
+          <p className="text-sm text-gray-600 mt-1">{activity.description_c}</p>
         )}
       </div>
     </div>

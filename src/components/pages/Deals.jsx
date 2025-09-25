@@ -94,7 +94,7 @@ const Deals = () => {
   };
   
   const calculateTotalValue = () => {
-    return deals.reduce((total, deal) => total + deal.value, 0);
+return deals.reduce((total, deal) => total + deal.value_c, 0);
   };
   
   const formatCurrency = (amount) => {

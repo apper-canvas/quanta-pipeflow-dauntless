@@ -8,13 +8,13 @@ import { format } from "date-fns";
 
 const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
   const [formData, setFormData] = useState({
-    title: "",
-    value: "",
-    stage: "lead",
-    contactId: "",
-    expectedCloseDate: "",
-    probability: "25",
-    description: ""
+title_c: "",
+    value_c: "",
+    stage_c: "lead",
+    contact_id_c: "",
+    expected_close_date_c: "",
+    probability_c: "25",
+    description_c: ""
   });
   
   const [errors, setErrors] = useState({});
@@ -22,11 +22,11 @@ const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
   
   useEffect(() => {
     if (deal) {
-      setFormData({
+setFormData({
         ...deal,
-        value: deal.value.toString(),
-        probability: deal.probability.toString(),
-        expectedCloseDate: format(new Date(deal.expectedCloseDate), "yyyy-MM-dd")
+        value_c: deal.value_c.toString(),
+        probability_c: deal.probability_c.toString(),
+        expected_close_date_c: format(new Date(deal.expected_close_date_c), "yyyy-MM-dd")
       });
     }
   }, [deal]);
@@ -34,24 +34,24 @@ const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
   const validateForm = () => {
     const newErrors = {};
     
-    if (!formData.title.trim()) {
-      newErrors.title = "Title is required";
+if (!formData.title_c.trim()) {
+      newErrors.title_c = "Title is required";
     }
     
-    if (!formData.value || isNaN(formData.value) || parseFloat(formData.value) <= 0) {
-      newErrors.value = "Valid deal value is required";
+if (!formData.value_c || isNaN(formData.value_c) || parseFloat(formData.value_c) <= 0) {
+      newErrors.value_c = "Valid deal value is required";
     }
     
-    if (!formData.contactId) {
-      newErrors.contactId = "Contact is required";
+if (!formData.contact_id_c) {
+      newErrors.contact_id_c = "Contact is required";
     }
     
-    if (!formData.expectedCloseDate) {
-      newErrors.expectedCloseDate = "Expected close date is required";
+if (!formData.expected_close_date_c) {
+      newErrors.expected_close_date_c = "Expected close date is required";
     }
     
-    if (!formData.probability || isNaN(formData.probability) || parseInt(formData.probability) < 0 || parseInt(formData.probability) > 100) {
-      newErrors.probability = "Probability must be between 0 and 100";
+if (!formData.probability_c || isNaN(formData.probability_c) || parseInt(formData.probability_c) < 0 || parseInt(formData.probability_c) > 100) {
+      newErrors.probability_c = "Probability must be between 0 and 100";
     }
     
     setErrors(newErrors);
@@ -69,9 +69,9 @@ const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
     
     try {
       const dealData = {
-        ...formData,
-        value: parseFloat(formData.value),
-        probability: parseInt(formData.probability)
+...formData,
+        value_c: parseFloat(formData.value_c),
+        probability_c: parseInt(formData.probability_c)
       };
       
       await onSave(dealData);
@@ -95,32 +95,32 @@ const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
   
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Input
+<Input
         label="Deal Title"
-        name="title"
-        value={formData.title}
+        name="title_c"
+        value={formData.title_c}
         onChange={handleChange}
-        error={errors.title}
+        error={errors.title_c}
         placeholder="Enter deal title"
       />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
+<Input
           label="Deal Value ($)"
-          name="value"
+          name="value_c"
           type="number"
           step="0.01"
           min="0"
-          value={formData.value}
+          value={formData.value_c}
           onChange={handleChange}
-          error={errors.value}
+          error={errors.value_c}
           placeholder="0.00"
         />
         
-        <Select
+<Select
           label="Stage"
-          name="stage"
-          value={formData.stage}
+          name="stage_c"
+          value={formData.stage_c}
           onChange={handleChange}
         >
           <option value="lead">Lead</option>
@@ -132,40 +132,40 @@ const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Select
+<Select
           label="Contact"
-          name="contactId"
-          value={formData.contactId}
+          name="contact_id_c"
+          value={formData.contact_id_c}
           onChange={handleChange}
-          error={errors.contactId}
+          error={errors.contact_id_c}
         >
           <option value="">Select a contact</option>
           {contacts.map(contact => (
             <option key={contact.Id} value={contact.Id}>
-              {contact.firstName} {contact.lastName} - {contact.company}
+              {contact.first_name_c} {contact.last_name_c} - {contact.company_c}
             </option>
           ))}
         </Select>
         
-        <Input
+<Input
           label="Expected Close Date"
-          name="expectedCloseDate"
+          name="expected_close_date_c"
           type="date"
-          value={formData.expectedCloseDate}
+          value={formData.expected_close_date_c}
           onChange={handleChange}
-          error={errors.expectedCloseDate}
+          error={errors.expected_close_date_c}
         />
       </div>
       
-      <Input
+<Input
         label="Probability (%)"
-        name="probability"
+        name="probability_c"
         type="number"
         min="0"
         max="100"
-        value={formData.probability}
+        value={formData.probability_c}
         onChange={handleChange}
-        error={errors.probability}
+        error={errors.probability_c}
         placeholder="0-100"
       />
       
@@ -174,8 +174,8 @@ const DealForm = ({ deal, contacts = [], onSave, onCancel }) => {
           Description
         </label>
         <textarea
-          name="description"
-          value={formData.description}
+name="description_c"
+          value={formData.description_c}
           onChange={handleChange}
           rows={3}
           className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"

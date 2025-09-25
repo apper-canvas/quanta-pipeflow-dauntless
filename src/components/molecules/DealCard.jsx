@@ -40,11 +40,11 @@ const DealCard = ({
     >
       <Card className="hover:shadow-md transition-all duration-200 cursor-pointer">
         <div className="flex items-start justify-between mb-3">
-          <div className={`w-1 h-12 rounded-full ${getStageColor(deal.stage)} mr-3`}></div>
+<div className={`w-1 h-12 rounded-full ${getStageColor(deal.stage_c)} mr-3`}></div>
           <div className="flex-1">
-            <h4 className="font-semibold text-gray-900 mb-1">{deal.title}</h4>
-            <p className="text-lg font-bold gradient-text">
-              {formatCurrency(deal.value)}
+<h4 className="font-semibold text-gray-900 mb-1">{deal.title_c}</h4>
+<p className="text-lg font-bold gradient-text">
+              {formatCurrency(deal.value_c)}
             </p>
           </div>
           <div className="flex space-x-1">
@@ -66,19 +66,19 @@ const DealCard = ({
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-600">Probability:</span>
-            <span className="font-medium">{deal.probability}%</span>
+<span className="font-medium">{deal.probability_c}%</span>
           </div>
           
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-600">Close Date:</span>
-            <span className="font-medium">
-              {format(new Date(deal.expectedCloseDate), "MMM dd")}
+<span className="font-medium">
+              {format(new Date(deal.expected_close_date_c), "MMM dd")}
             </span>
           </div>
           
-          {deal.description && (
+{deal.description_c && (
             <p className="text-sm text-gray-600 mt-2 line-clamp-2">
-              {deal.description}
+              {deal.description_c}
             </p>
           )}
         </div>

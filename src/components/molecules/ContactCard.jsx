@@ -25,33 +25,33 @@ const ContactCard = ({ contact, onView, onEdit, onDelete }) => {
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
             <Avatar 
-              name={`${contact.firstName} ${contact.lastName}`} 
+name={`${contact.first_name_c} ${contact.last_name_c}`} 
               size="lg"
             />
             <div>
               <h3 className="font-semibold text-gray-900">
-                {contact.firstName} {contact.lastName}
+{contact.first_name_c} {contact.last_name_c}
               </h3>
-              <p className="text-sm text-gray-600">{contact.position}</p>
+<p className="text-sm text-gray-600">{contact.position_c}</p>
             </div>
           </div>
-          <Badge variant={getStatusVariant(contact.status)}>
-            {contact.status}
+<Badge variant={getStatusVariant(contact.status_c)}>
+            {contact.status_c}
           </Badge>
         </div>
         
         <div className="space-y-2 mb-4">
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="Building" className="h-4 w-4 mr-2" />
-            {contact.company}
+{contact.company_c}
           </div>
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="Mail" className="h-4 w-4 mr-2" />
-            {contact.email}
+{contact.email_c}
           </div>
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="Phone" className="h-4 w-4 mr-2" />
-            {contact.phone}
+{contact.phone_c}
           </div>
         </div>
         

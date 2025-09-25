@@ -55,17 +55,17 @@ const Contacts = () => {
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(contact => 
-        contact.firstName.toLowerCase().includes(searchLower) ||
-        contact.lastName.toLowerCase().includes(searchLower) ||
-        contact.email.toLowerCase().includes(searchLower) ||
-        contact.company.toLowerCase().includes(searchLower) ||
-        contact.position.toLowerCase().includes(searchLower)
+contact.first_name_c.toLowerCase().includes(searchLower) ||
+        contact.last_name_c.toLowerCase().includes(searchLower) ||
+        contact.email_c.toLowerCase().includes(searchLower) ||
+        contact.company_c.toLowerCase().includes(searchLower) ||
+        contact.position_c.toLowerCase().includes(searchLower)
       );
     }
     
     // Apply status filter
-    if (statusFilter) {
-      filtered = filtered.filter(contact => contact.status === statusFilter);
+if (statusFilter) {
+      filtered = filtered.filter(contact => contact.status_c === statusFilter);
     }
     
     setFilteredContacts(filtered);
